@@ -7,7 +7,7 @@
     margin: 10px;
     padding-bottom: 10px;
     float: left;
-  background-color: #DEF3A6;
+  background-color: #a5a5a5;
     text-align: center;
 }
 
@@ -32,7 +32,7 @@ img {
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #4c7aaf;
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
@@ -48,10 +48,10 @@ img {
     width: 100%;
   }
   
-  .button:hover {background-color: #3e8e41}
+  .button:hover {background-color: #3e438e}
   
   .button:active {
-    background-color: #3e8e41;
+    background-color: #3e438e;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
