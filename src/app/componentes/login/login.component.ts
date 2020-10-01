@@ -23,4 +23,9 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/Principal']);
     }).catch(err => alert('Usuario o Contraseña incorrectas'))
   }
+
+  cargarUsuario(){
+    this.user.email = "admin@admin.com";
+    this.user.password = "administrador";
+  }
 }
