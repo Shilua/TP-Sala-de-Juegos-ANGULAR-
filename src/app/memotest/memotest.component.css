@@ -2,101 +2,114 @@
     animation: fadeIn 1.5s;  
 }
   
-.cnt-tateti {
+.cnt-memotest {
     width: 50vw;
     height: 75vh;
     border-radius: 15%;
-    background: var(--dark-red);
+    background: var(--dark-green);
     border: 0px;
 }
   
-.cnt-juego-tateti {
+.cnt-juego-memotest {
     height: 80%;
     width: 100%;
 }
 
-.cnt-tablero-tateti {
+.cnt-tablero-memotest {
     height: 90%;
     width: 60%;
 }
 
-.casilla {
-    height: 33.33%;
-    width: 33.33%;
-    padding: 1%;
+
+.casilla_0, .casilla_1, .casilla_2, .casilla_3, .casilla_4, .casilla_5, .casilla_6, .casilla_7, .casilla_8, .casilla_9, .casilla_10, .casilla_11 {
+    height: 25%;
+    width: 25%;
     background-size: 100% 100%;
     border: 0px;
-}
-
-.circulo {
-    background-image: url("../../../assets/imagenes/circulo.png");
-}
-
-.cruz {
-    background-image: url("../../../assets/imagenes/cruz.png");
-}
-
-
-
-.casilla_0, .casilla_1, .casilla_2, .casilla_3, .casilla_4, .casilla_5, .casilla_6, .casilla_7, .casilla_8 {
-    height: 33.33%;
-    width: 33.33%;
-    padding: 1%;
-    background-size: 100% 100%;
-    border: 0px;
+    
 }
 
 .casilla_0 {
-    border-right: 2px solid var(--green);
-    border-bottom: 2px solid var(--green);
-    border-top-left-radius: 20%;
-}
-
-.casilla_1 {
-    border-left: 2px solid var(--green);
+    border-top-left-radius: 25%;
     border-right: 2px solid var(--green);
     border-bottom: 2px solid var(--green);
 }
 
-.casilla_2 {
+.casilla_1, .casilla_2 {
     border-left: 2px solid var(--green);
+    border-right: 2px solid var(--green);
     border-bottom: 2px solid var(--green);
-    border-top-right-radius: 20%;
 }
 
 .casilla_3 {
-    border-right: 2px solid var(--green);
-    border-top: 2px solid var(--green);
+    border-top-right-radius: 25%;
+    border-left: 2px solid var(--green);
     border-bottom: 2px solid var(--green);
 }
 
 .casilla_4 {
-    border-left: 2px solid var(--green);
     border-right: 2px solid var(--green);
     border-top: 2px solid var(--green);
     border-bottom: 2px solid var(--green);
 }
 
-.casilla_5 {
+.casilla_5, .casilla_6 {
     border-left: 2px solid var(--green);
-    border-top: 2px solid var(--green);
-    border-bottom: 2px solid var(--green);
-}
-
-.casilla_6 {
     border-right: 2px solid var(--green);
     border-top: 2px solid var(--green);
-    border-bottom-left-radius: 20%;
+    border-bottom: 2px solid var(--green);
 }
 
 .casilla_7 {
     border-left: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+}
+
+.casilla_8 {
+    border-bottom-left-radius: 25%;
     border-right: 2px solid var(--green);
     border-top: 2px solid var(--green);
 }
 
-.casilla_8 {
+.casilla_9, .casilla_10 {
+    border-left: 2px solid var(--green);
+    border-right: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+}
+
+.casilla_11 {
+    border-bottom-right-radius: 25%;
     border-left: 2px solid var(--green);
     border-top: 2px solid var(--green);
-    border-bottom-right-radius: 20%;
+}
+
+.f_0 {
+    background-image: url("../../assets/imagenes/memotest/jirafa.png");
+    background-size: 100% 100%;
+}
+
+.f_1 {
+    background-image: url("../../assets/imagenes/memotest/elefante.png");
+    background-size: 100% 100%;
+}
+
+.f_2 {
+    background-image: url("../../assets/imagenes/memotest/leon.png");
+    background-size: 100% 100%;
+}
+
+.f_3 {
+    background-image: url("../../assets/imagenes/memotest/hipo.png");
+    background-size: 100% 100%;
+}
+
+.f_4 {
+    background-image: url("../../assets/imagenes/memotest/cebra.png");
+    background-size: 100% 100%;
+}
+
+.f_5 {
+    background-image: url("../../assets/imagenes/memotest/oso.png");
+    background-size: 100% 100%;
 }
