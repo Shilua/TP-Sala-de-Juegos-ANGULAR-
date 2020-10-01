@@ -28,4 +28,8 @@ export class LoginComponent implements OnInit {
     this.user.email = "admin@admin.com";
     this.user.password = "administrador";
   }
+
+  register(){
+    this.router.navigate(['/Registro']);
+  }
 }
