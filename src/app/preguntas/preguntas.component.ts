@@ -8,7 +8,7 @@ export class PreguntasComponent implements OnInit {
 
   arrayPreguntas = [
     ["¿Cual es la capital de Buenos Aires?:","Rosario", "La Plata", "CABA","2"], ["¿en que año fue la independencia de Argentina? :","1904", "1810", "1816" ,"3"],
-    ["¿A que hora se toma el te en Inglaterra :","5PM", "11AM", "7PM","1"], ["¿Como se llama la primer perra que fue enviada al espacio? :","Scooby", "Laika", "Patan","2"],
+    ["¿A que hora se toma el te en Inglaterra? :","5PM", "11AM", "7PM","1"], ["¿Como se llama la primer perra que fue enviada al espacio? :","Scooby", "Laika", "Patan","2"],
     ["¿Cuantos premios novel de matematicas se entregaron? :","4", "35", "Ninguno","3"] 
   ];
   pregunta:string;
@@ -19,6 +19,7 @@ export class PreguntasComponent implements OnInit {
   mensaje:string;
   radio:string;
   puntos:number;
+  finJuego:boolean;
   constructor() {
     this.contador = 0;
     this.puntos = 0;
@@ -26,7 +27,7 @@ export class PreguntasComponent implements OnInit {
     this.respuesta1 = '';
     this.respuesta2 = '';
     this.respuesta3 = '';
-
+    this.finJuego = false;
    }
    handleChange(e:any){
     this.radio = e.target.value;
@@ -94,6 +95,7 @@ export class PreguntasComponent implements OnInit {
         this.respuesta2 = this.arrayPreguntas[this.contador][2];
         this.respuesta3 = this.arrayPreguntas[this.contador][3];
         this.contador++;
+        
         break;
       case 5:
           if (this.radio == this.arrayPreguntas[this.contador-1][4]) {
@@ -101,7 +103,7 @@ export class PreguntasComponent implements OnInit {
             this.puntos++;
           }else {
             this.mensaje = "incorrecto";
-          }
+          }this.finJuego = true;
           this.calcularPuntaje();
           break;
       default:

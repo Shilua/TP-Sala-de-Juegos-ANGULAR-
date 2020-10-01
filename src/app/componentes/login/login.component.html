@@ -20,7 +20,7 @@
       <button (click)="Entrar()" class="btn btn-info btn-lg" >Entrar</button>
     </div>
   </div>
-</div-->
+</div>
  <div class="container" >
   <div class="jumbotron" style="padding:50px;">
     <form action="return true;">
@@ -53,5 +53,14 @@
       </div>
      
     </form>
+  </div>
+</div-->
+<div class="row justify-content-center">
+  <div class="col-4 align-self-center">
+    <div class="card text-center">
+      <input [(ngModel)]="user.email" placeholder="ingrese Email" type="email" class="form-control"/>
+      <input [(ngModel)]="user.password" placeholder="ingrese clave" type="password" class="form-control"/>
+      <button class="btn btn-outline-success" (click)="onLogin()">Login</button>
+    </div>
   </div>
 </div>

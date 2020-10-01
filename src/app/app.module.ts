@@ -57,7 +57,19 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { TaTeTiComponent } from './componentes/ta-te-ti/ta-te-ti.component';
 import { MemotestComponent } from './memotest/memotest.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
+var firebaseConfig = {
+  apiKey: "AIzaSyDb1U2ktBra9ZiGQttLlkx_OTFV8IMow4c",
+  authDomain: "applabo4.firebaseapp.com",
+  databaseURL: "https://applabo4.firebaseio.com",
+  projectId: "applabo4",
+  storageBucket: "applabo4.appspot.com",
+  messagingSenderId: "995895825090",
+  appId: "1:995895825090:web:a8e80d24fa389fa8cca15b",
+  measurementId: "G-N768YVTERH"
+};
 @NgModule({
   declarations: [
     AppComponent,
@@ -93,6 +105,8 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
     FormsModule,
     RuteandoModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     })

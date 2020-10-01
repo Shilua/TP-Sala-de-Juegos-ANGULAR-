@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Jugador } from '../../clases/jugador';
+import { AuthService } from "../../services/auth.service";
 //para poder hacer las validaciones
 //import { Validators, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 @Component({
@@ -9,14 +11,17 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
- /* constructor( private miConstructor:FormBuilder) { }
-  email=new FormControl('',[Validators.email]);
-  formRegistro:FormGroup=this.miConstructor.group({
-    usuario:this.email
-  });*/
-  constructor( ) { }
+ //user:Jugador
+ user:Jugador = new Jugador();
+  constructor(private authSvc:AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  async onRegister(){
+    const user = await this.authSvc.onRegister(this.user);
+    if (user) {
+      this.router.navigateByUrl('/');
+    }
+  }
 }

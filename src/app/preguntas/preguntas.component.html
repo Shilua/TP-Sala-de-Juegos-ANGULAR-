@@ -1,27 +1,31 @@
-<form>
-<div class="form-group" *ngIf="contador != 0">
-    <h2>{{pregunta}}</h2>
-    <div class="form-check" name="pregunta">
-    <input (change)="handleChange($event)" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1">
-    <label class="form-check-label" for="exampleRadios1">
-        {{respuesta1}}
-    </label>
+<div class="row justify-content-center">
+    <div class="col-4 align-self-center">
+        <form>
+            <div class="form-group" *ngIf="contador != 0 && !finJuego">
+                <h3>{{pregunta}}</h3>
+                <div class="form-check" name="pregunta">
+                <input (change)="handleChange($event)" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1">
+                <label class="form-check-label" for="exampleRadios1">
+                    {{respuesta1}}
+                </label>
+                </div>
+              <div class="form-check">
+                <input (change)="handleChange($event)" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
+                <label class="form-check-label" for="exampleRadios2">
+                    {{respuesta2}}
+                </label>
+              </div>
+              <div class="form-check">
+                <input (change)="handleChange($event)" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="3">
+                <label class="form-check-label" for="exampleRadios3">
+                    {{respuesta3}}
+                </label>
+                
+              </div>
+              <button class="btn btn-outline-success" (click)="responder()">Responder</button>      
+            </div>
+        </form>
+            <h4 *ngIf="contador != 0">{{mensaje}}</h4>
+            <button *ngIf="contador == 0" class="btn btn-outline-success" (click)="comenzarJuego()">Comenzar</button>
     </div>
-  <div class="form-check">
-    <input (change)="handleChange($event)" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
-    <label class="form-check-label" for="exampleRadios2">
-        {{respuesta2}}
-    </label>
-  </div>
-  <div class="form-check">
-    <input (change)="handleChange($event)" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="3">
-    <label class="form-check-label" for="exampleRadios3">
-        {{respuesta3}}
-    </label>
-    
-  </div>
-  <button class="btn btn-outline-success" (click)="responder()">Responder</button>
-  <h4 *ngIf="contador != 0">{{mensaje}}</h4>
 </div>
-</form>
-<button *ngIf="contador == 0" class="btn btn-outline-success" (click)="comenzarJuego()">Comenzar</button>
