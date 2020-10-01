@@ -1,0 +1,108 @@
+* {
+    animation: fadeIn 1.5s;  
+}
+  
+.cnt-tateti {
+    width: 50vw;
+    height: 75vh;
+    border-radius: 15%;
+    background: var(--dark-red);
+    border: 0px;
+    /*overflow: hidden;
+    animation: flicker 2s infinite alternate;*/
+}
+  
+.cnt-juego-tateti {
+    height: 80%;
+    width: 100%;
+    /*display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;*/
+}
+
+.cnt-tablero-tateti {
+    height: 90%;
+    width: 60%;
+}
+
+.casilla {
+    height: 33.33%;
+    width: 33.33%;
+    padding: 1%;
+    background-size: 100% 100%;
+    border: 0px;
+}
+
+.circulo {
+    background-image: url("../../../assets/imagenes/circulo.png");
+}
+
+.cruz {
+    background-image: url("../../../assets/imagenes/cruz.png");
+}
+
+
+
+.casilla_0, .casilla_1, .casilla_2, .casilla_3, .casilla_4, .casilla_5, .casilla_6, .casilla_7, .casilla_8 {
+    height: 33.33%;
+    width: 33.33%;
+    padding: 1%;
+    background-size: 100% 100%;
+    border: 0px;
+}
+
+.casilla_0 {
+    border-right: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+    border-top-left-radius: 20%;
+}
+
+.casilla_1 {
+    border-left: 2px solid var(--green);
+    border-right: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+}
+
+.casilla_2 {
+    border-left: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+    border-top-right-radius: 20%;
+}
+
+.casilla_3 {
+    border-right: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+}
+
+.casilla_4 {
+    border-left: 2px solid var(--green);
+    border-right: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+}
+
+.casilla_5 {
+    border-left: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+    border-bottom: 2px solid var(--green);
+}
+
+.casilla_6 {
+    border-right: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+    border-bottom-left-radius: 20%;
+}
+
+.casilla_7 {
+    border-left: 2px solid var(--green);
+    border-right: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+}
+
+.casilla_8 {
+    border-left: 2px solid var(--green);
+    border-top: 2px solid var(--green);
+    border-bottom-right-radius: 20%;
+}

@@ -1,38 +1,23 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--app-menu></app-menu-->
 <!-- index.html -->
-
-
-<form name="juego">
-<ul>
-   <li>
-   Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-  
-  </li>
-  <li>
-   Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
+<div class="row justify-content-center">
+<div class="col-4 align-self-center">
+  <h1>agilidad aritetica</h1>
+  <div>
+    <h2 *ngIf="comenzar">{{numeroA}} {{operador}} {{numeroB}}</h2>
+    <h2 *ngIf="comenzar">{{tiempo}}</h2>
+    <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
     
-  </li>
-  <li>
-   Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
     
-  </li>
-  <li>
-    Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-     
-   </li>
-  <li>
-    <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-  </li>
-  <li>
-    <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-  </li>
-  <li>
-    <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
+    <button *ngIf="!comenzar && !mostrarMensaje" type="button" class="btn btn-outline-success"  (click)="comenzarJuego()">comenzar</button>
+    <div class="input-group mb-3">
+      <input *ngIf="comenzar" type="number" placeholder="resultado" class="form-control"  [(ngModel)]="nuevoJuego.numeroIngresado">
+      <div class="input-group-append">
+        <button *ngIf="comenzar" type="button" class="btn btn-outline-success" (click)="verificar()">verificar</button>
+      </div>
+    </div>
 
-    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-  </li>
-</ul>
-
-</form>
+  </div>
+</div>
+</div>

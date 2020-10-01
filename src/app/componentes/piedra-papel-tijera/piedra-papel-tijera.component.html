@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-4 align-self-center">
+        <div class="card text-center">
+            <h2>piedra, papel o tijera</h2>
+        <div *ngIf="comenzar" class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4 *ngIf="!mostrarMensaje">Puntos jugador:{{puntosJugador}}</h4>
+                </div>
+                <div class="col-md-4">
+                    <h5 *ngIf="!mostrarMensaje">vs</h5>
+                </div>
+                <div class="col-md-4">
+                    <h4 *ngIf="!mostrarMensaje">Puntos Maquina:{{puntosCpu}}</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p *ngIf="!mostrarMensaje">Elejgiste {{jugadaElegida}}</p>   
+                </div>
+                <div class="col-md-6">
+                    <p *ngIf="!mostrarMensaje">La maquina eligio {{jugadaCpu}}</p>
+                </div>
+             
+            </div>
+            <h2 *ngIf="mostrarMensaje">{{mensaje}}</h2>
+            <!--div *ngIf="!mostrarMensaje" class="jugador" [ngClass]="{fondoPiedra: jugadaElegida == 'piedra', fondoPapel: jugadaElegida == 'papel', fondoTijera: jugadaElegida == 'tijera'}"></div-->
+            
+            
+            <!--div *ngIf="!mostrarMensaje" class="cpu" [ngClass]="{fondoPiedra: jugadaCpu == 'piedra', fondoPapel: jugadaCpu == 'papel', fondoTijera: jugadaCpu == 'tijera', fondoSpinner: spinner}"></div-->
+        </div>
+        <h2 *ngIf="comenzar && !mostrarMensaje">eliga su jugada</h2>
+            <div *ngIf="comenzar && !mostrarMensaje" class="btn-group btn-group-lg" role="group">
+                <button [disabled]="desabilitar"  type="button" class="btn btn-outline-success" (click)="jugar('piedra')">Piedra</button>
+                <button [disabled]="desabilitar" type="button" class="btn btn-outline-success" (click)="jugar('papel')">Papel</button>
+                <button [disabled]="desabilitar" type="button" class="btn btn-outline-success" (click)="jugar('tijera')">Tijera</button>
+            </div>
+        <button *ngIf="!comenzar" type="button" class="btn btn-outline-success" (click)="comenzarJuego()">comenzar</button>
+    </div>
+</div>

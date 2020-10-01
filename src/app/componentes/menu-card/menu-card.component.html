@@ -1,40 +1,75 @@
 <div class="container" >
-    <div class="card">
-      <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
-      <h1>Velocidad y agilidad aritmética </h1>
-      <p class="title">Juego de agilidad mental</p>
-      <p>UTN FRA </p>
-  
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Agilidad')">Jugar</button></p>
-    
+  <div class="row my-flex-card">
+    <div class="col-md-4" >
+      <div class="card mb-3 shadow-sm">
+        <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
+        <div class="card-body">
+          <h5>Velocidad y agilidad aritmética </h5>
+          <p class="title">Juego de agilidad mental</p>
+        </div>
+      <button class="btn btn-sm btn-outline-success"  (click)="Juego('Agilidad')">Jugar</button>
+      </div>
     </div>
-  
-    <div class="card">
-      <img class="img-thumbnail" src="./assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
-      <h1>Piedra Papel o Tijera</h1>
-      <p class="title">Juega contra la máquina</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('PPT')">Jugar</button></p>
+    <div class="col-md-4" >
+      <div class="card mb-3 shadow-sm">
+        <img class="img-thumbnail" src="./assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
+        <div class="card-body">
+          <h5>Piedra Papel o Tijera</h5>
+          <p class="title">Juega contra la máquina</p>    
+        </div>
+        <button class="btn btn-sm btn-outline-success"  (click)="Juego('PPT')">Jugar</button>
+      </div>
     </div>
-    <div class="card">
-      <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
-      <h1>Adivina el número secreto</h1>
-      <p class="title">Juega de estrategia</p>
-      <p>UTN FRA </p>
-      
-      <a href="#"><i class="fa fa-dribbble"></i></a> 
-      <a href="#"><i class="fa fa-twitter"></i></a> 
-      <a href="#"><i class="fa fa-linkedin"></i></a> 
-      <a href="#"><i class="fa fa-facebook"></i></a> 
-      <p>           <button class="button"  (click)="Juego('Adivina')">Jugar</button></p>
+    <div class="col-md-4" >
+      <div class="card mb-3 shadow-sm">
+        <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
+        <div class="card-body">
+          <h5>Adivina el número secreto</h5>
+          <p class="title">Juega de estrategia</p>      
+        </div>
+        <button class="btn btn-sm btn-outline-success"  (click)="Juego('Adivina')">Jugar</button>
+      </div>
     </div>
+    <div class="row my-flex-card">
+      <div class="col-md-4" >
+        <div class="card mb-3 shadow-sm">
+          <img class="img-thumbnail"   src="./assets/imagenes/cerebro.jpg" alt="Avatar" style="width:100%">
+          <div class="card-body">
+            <h5>Anagrama</h5>
+            <p class="title">se muestra una palabra desordenada y se debe ingresar la correcta</p>
+          </div>
+          <button class="btn btn-sm btn-outline-success"  (click)="Juego('Anagrama')">Jugar</button>
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div class="card mb-3 shadow-sm">
+          <img class="img-thumbnail" src="./assets/imagenes/ppt.jpg" alt="Avatar" style="width:100%">
+          <div class="card-body">
+            <h5>Memotest</h5>
+            <p class="title">Encuentra los pares</p>
+          </div>
+          <button class="btn btn-sm btn-outline-success"  (click)="Juego('PPT')">Jugar</button>
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div class="card mb-3 shadow-sm">
+          <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
+          <div class="card-body">
+            <h5>TaTeTi</h5>
+            <p class="title">Vence a la maquina en este clasico</p>
+          </div>
+          <button class="btn btn-sm btn-outline-success"  (click)="Juego('TaTeTi')">Jugar</button>
+        </div>
+      </div>
+      <div class="col-md-4" >
+        <div class="card mb-3 shadow-sm">
+          <img  class="img-thumbnail"  src="./assets/imagenes/adivina.png" alt="Avatar" style="width:100%">
+          <div class="card-body">
+            <h5>Responde correctamente</h5>
+            <p class="title">5 preguntas 3 respuestas por pregunta</p>
+          </div>
+          <button class="btn btn-sm btn-outline-success"  (click)="Juego('Adivina')">Jugar</button>
+        </div>
+      </div>
+  </div>
   </div>

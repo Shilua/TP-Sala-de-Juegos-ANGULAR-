@@ -1,12 +1,21 @@
-<div class="panel panel-default">
-  <div class="hero-text">
-      <h1 style="font-size:50px">Sala de Juegos</h1>
-      <p>Maximiliano Vargas</p>
-      <a href="https://github.com/Shilua"target="_blank">en GitHub <i class="fa fa-github"></i></a>
-      <a  routerLink="/QuienSoy" >Quien Soy? <i class="fa fa-user"></i></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Sala de juegos</a>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li>
+        <a class="nav-link" href="https://github.com/Shilua"target="_blank">en GitHub <i class="fa fa-github"></i></a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/QuienSoy">Quien soy?</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn-outline-light my-2 my-sm-0" routerLink="/Registro">Registrarse</button>
+      <button class="btn btn-outline-light my-2 my-sm-0" routerLink="/Login">Ingresar</button>
+    </form>
   </div>
-  <ul class="nav navbar-nav navbar-right">
-          <li><button routerLink="/Registro"class="btn btn-secondary btn-sm">Registrarse</button></li>
-          <li><button  routerLink="/Login"class="btn btn-secondary btn-sm"> Ingresar</button></li>
-  </ul>
-</div>
+</nav>
