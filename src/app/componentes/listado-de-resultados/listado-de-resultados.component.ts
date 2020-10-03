@@ -1,5 +1,7 @@
 
 import { Component, OnInit , Input, EventEmitter} from '@angular/core';
+import { Router } from '@angular/router';
+import { PointsService } from '../../services/points.service';
 
 @Component({
   selector: 'app-listado-de-resultados',
@@ -7,19 +9,18 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
   styleUrls: ['./listado-de-resultados.component.css']
 })
 export class ListadoDeResultadosComponent implements OnInit {
- @Input()
- listado: Array<any>;
+  @Input() 
+  listado:any;
 
 
-  constructor() {
-   }
+  constructor(private router: Router) {
+       
+  }
 
   ngOnInit() {
 
   }
 
-  ver() {
-    console.info(this.listado);
-  }
+
 
 }

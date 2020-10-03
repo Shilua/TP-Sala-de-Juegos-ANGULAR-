@@ -1,25 +1,31 @@
-<!--div *ngFor="let juego of listado">
+<div class="pos-f-t">
+  <nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button class="navbar-brand" routerLink="/Principal" class="btn btn-success btn-sm">Inicio</button>
+      </div>
+    </div>
+  </nav>
+</div> 
 
-<p> {{juego.nombre}} </p>
-<p> {{juego.jugador}} </p>
-
-</div-->
-
-<table class="table table-condensed">
-    <thead>
-      <tr>
-        <th>Juego</th>
-        <th>Jugador</th>
-        <th>Resultado</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let juego of listado">
-        <td>{{juego.nombre}} </td>
-        <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.gano">Gano </td>   
-        <td *ngIf="!juego.gano">Perdio</td>     
-      </tr>
-     
-    </tbody>
-  </table>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10 align-self-center">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>usuario</th>
+            <th>puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let jugador of listado" >
+            <td>{{jugador.correo}} </td>
+            <td>{{jugador.points}} </td> 
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
