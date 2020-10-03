@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PointsService } from '../services/points.service';
 
 @Component({
   selector: 'app-memotest',
@@ -19,7 +20,7 @@ export class MemotestComponent implements OnInit {
   intentos:number;
   desabilitar:boolean = false;
 
-  constructor(/*private resultadoService : ResultadosService*/) {}
+  constructor(private points: PointsService) {}
 
   comenzarJuego() {
     this.comenzar = true;
@@ -86,14 +87,13 @@ export class MemotestComponent implements OnInit {
   jugadorGano() {
     this.mostrarMensaje = true;
     this.mensaje = "gano!";
-    //this.cargarVictoria();
+    this.cargarPuntos(100);
     setTimeout(() => this.reiniciar(), 4000);
   }
 
   jugadorPerdio() {
     this.mostrarMensaje = true;
     this.mensaje = "perdio";
-    //this.cargarPerdida();
     setTimeout(() => this.reiniciar(), 4000);
   }
 
@@ -102,13 +102,9 @@ export class MemotestComponent implements OnInit {
     this.comenzar = false;
   }
 
-  /*cargarVictoria() {
-    this.resultadoService.gano("memotest");
+  cargarPuntos(point: number){
+    this.points.savePoints(point);
   }
-
-  cargarPerdida() {
-    this.resultadoService.perdio("memotest");
-  }*/
 
   ngOnInit() {}
 

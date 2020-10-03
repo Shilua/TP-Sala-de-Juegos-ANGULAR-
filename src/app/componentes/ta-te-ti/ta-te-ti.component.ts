@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PointsService } from '../../services/points.service';
 
 @Component({
   selector: 'app-ta-te-ti',
@@ -13,7 +14,7 @@ export class TaTeTiComponent implements OnInit {
   mostrarMensaje:boolean = false;
   desabilitar:boolean = false;
 
-  constructor(/*private resultadoService : ResultadosService*/) {
+  constructor(private points: PointsService) {
     this.cuadrados = new Array(9);
   }
 
@@ -25,7 +26,7 @@ export class TaTeTiComponent implements OnInit {
     if(this.cuadrados[casillero] == null) {
       this.cuadrados[casillero] = "x";
       if(this.verificarGanador("x")) { 
-        //this.cargarVictoria();
+        this.cargarPuntos(100);
         this.mostrarResultado("ganaste");
       } else { 
         if(this.verificarEmpate()) {
@@ -35,7 +36,6 @@ export class TaTeTiComponent implements OnInit {
           //setTimeout(() => this.jugarCpu(), 1000);
           this.jugarCpu();
           if(this.verificarGanador("o")) {
-            //this.cargarPerdida();
             this.mostrarResultado("perdiste");
           } else {
             if(this.verificarEmpate()) {
@@ -45,16 +45,10 @@ export class TaTeTiComponent implements OnInit {
         }
       }
     }
+  } 
+  cargarPuntos(point: number){
+    this.points.savePoints(point);
   }
-
-  /*cargarVictoria() {
-    this.resultadoService.gano("tateti");
-  }
-
-  cargarPerdida() {
-    this.resultadoService.perdio("tateti");
-  }*/
-
   jugarCpu() {
     let casillaHabilitada = false;
     let casilla;

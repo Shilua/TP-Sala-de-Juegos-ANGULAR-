@@ -1,5 +1,6 @@
 
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
+import { PointsService } from '../../services/points.service';
 import { JuegoAdivina } from '../../clases/juego-adivina'
 
 @Component({
@@ -15,7 +16,7 @@ export class AdivinaElNumeroComponent implements OnInit {
   contador:number;
   ocultarVerificar:boolean;
  
-  constructor() { 
+  constructor(private points: PointsService) { 
     this.nuevoJuego = new JuegoAdivina();
     console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
@@ -30,8 +31,9 @@ export class AdivinaElNumeroComponent implements OnInit {
     this.ocultarVerificar=true;
     console.info("numero Secreto:",this.nuevoJuego.gano);  
     if (this.nuevoJuego.verificar()){
-      
+      this.cargarPuntos(100); 
       this.enviarJuego.emit(this.nuevoJuego);
+      
       this.MostarMensaje("Sos un Genio!!!",true);
       this.nuevoJuego.numeroSecreto=0;
 
@@ -85,7 +87,10 @@ export class AdivinaElNumeroComponent implements OnInit {
      }, 3000);
     console.info("objeto",x);
   
-   }  
+   }
+   cargarPuntos(point: number){
+     this.points.savePoints(point);
+   }
   ngOnInit() {
   }
 

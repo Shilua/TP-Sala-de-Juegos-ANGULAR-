@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PointsService } from '../services/points.service';
 @Component({
   selector: 'app-preguntas',
   templateUrl: './preguntas.component.html',
@@ -20,7 +21,7 @@ export class PreguntasComponent implements OnInit {
   radio:string;
   puntos:number;
   finJuego:boolean;
-  constructor() {
+  constructor(private points : PointsService) {
     this.contador = 0;
     this.puntos = 0;
     this.pregunta = '';
@@ -112,8 +113,31 @@ export class PreguntasComponent implements OnInit {
   }
 
   calcularPuntaje(){
-
+    switch (this.puntos) {
+      case 1:
+        this.cargarPuntos(100);
+        break;
+      case 2:
+        this.cargarPuntos(200);
+        break;
+      case 3:
+        this.cargarPuntos(300);
+        break;
+      case 4:
+        this.cargarPuntos(400);
+        break;
+      case 5:
+        this.cargarPuntos(500);
+        break;
+      default:
+        break;
+    }
   }
+
+  cargarPuntos(point: number){
+    this.points.savePoints(point);
+  }
+
 
   ngOnInit(): void {
   }

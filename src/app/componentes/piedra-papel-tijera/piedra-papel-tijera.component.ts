@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PointsService } from '../../services/points.service';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -20,7 +21,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   desabilitar:boolean = false;
   spinner:boolean = true;
 
-  constructor(/*private resultadoService : ResultadosService*/) { }
+  constructor(private points: PointsService) { }
 
   comenzarJuego() {
     this.comenzar = true;
@@ -86,7 +87,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
     if(this.puntosJugador >= 3) {
       this.mensaje = "ganaste";
       this.mostrarMensaje = true;
-      //this.cargarVictoria();
+      this.cargarPuntos(100);
       setTimeout(() => this.reiniciar(), 4000);
     } else {
       this.desabilitar = false;
@@ -98,7 +99,6 @@ export class PiedraPapelTijeraComponent implements OnInit {
     if(this.puntosCpu >= 3) {
       this.mensaje = "perdiste";
       this.mostrarMensaje = true;
-      //this.cargarPerdida();
       setTimeout(() => this.reiniciar(), 4000);
     } else {
       this.desabilitar = false;
@@ -111,13 +111,9 @@ export class PiedraPapelTijeraComponent implements OnInit {
     this.jugadaElegida = "";
     this.jugadaCpu = "";
   }
-
-  /*cargarVictoria() {
-    this.resultadoService.gano("piedraPapelTijera");
+  cargarPuntos(point: number){
+    this.points.savePoints(point);
   }
-
-  cargarPerdida() {
-    this.resultadoService.perdio("piedraPapelTijera");
-  }*/
+ 
   ngOnInit() {}
 }
